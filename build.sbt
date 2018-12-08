@@ -1,5 +1,5 @@
-name := course.value + "-" + assignment.value
-
+//name := course.value + "-" + assignment.value
+name := "scalaprin-huffman"
 scalaVersion := "2.11.12"
 
 scalacOptions ++= Seq("-deprecation")

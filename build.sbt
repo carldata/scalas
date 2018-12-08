@@ -1,25 +1,17 @@
-enablePlugins(JavaAppPackaging)
+name := course.value + "-" + assignment.value
 
-name := "scala-akka-http-quickstart"
-organization := "com.exabeam"
-version := "1.0"
-scalaVersion := "2.12.3"
+scalaVersion := "2.11.12"
 
-scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
+scalacOptions ++= Seq("-deprecation")
 
-libraryDependencies ++= {
-  val akkaV       = "2.5.3"
-  val akkaHttpV   = "10.0.9"
-  val scalaTestV  = "3.0.1"
-  Seq(
-    "com.typesafe.akka" %% "akka-actor" % akkaV,
-    "com.typesafe.akka" %% "akka-stream" % akkaV,
-    "com.typesafe.akka" %% "akka-testkit" % akkaV,
-    "com.typesafe.akka" %% "akka-http" % akkaHttpV,
-    "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpV,
-    "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpV,
-    "org.scalatest"     %% "scalatest" % scalaTestV % "test"
-  )
-}
+// grading libraries
+libraryDependencies += "junit" % "junit" % "4.10" % Test
 
-Revolver.settings
+// for funsets
+libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4"
+
+// include the common dir
+commonSourcePackages += "common"
+
+courseId := "bRPXgjY9EeW6RApRXdjJPw"
+
